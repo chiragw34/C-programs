@@ -1,0 +1,36 @@
+#include<stdio.h>
+#include<conio.h>
+#include<math.h>
+#include<graphics.h>
+ void main()
+ {
+    int gd=DETECT,gm;
+    int x,y,x1,x2,y1,y2,dy,dx,m,M;
+    initgraph(&gd,&gm,"C:/TC/BGI");
+    printf("Enter The Coordinates of First Point:");
+    scanf("%d%d",&x1,&y1);
+    printf("Enter The Coordinates of Second Point:");
+    scanf("%d%d",&x2,&y2);
+    dy=y2-y1;
+    dx=x2-x1;
+    m=dy/dx;
+    M=1/m;
+    x=x1;
+    y=y1;
+    while(x2>x)
+    {
+    putpixel(x,y,WHITE);
+	if(m<1)
+        {
+            x=x+1;
+            y=y+m;
+        }
+	else
+	    {
+		y=y+1;
+		x=x+M;
+	    }
+    }
+    getch();
+    closegraph();
+ }

@@ -1,0 +1,241 @@
+#include<stdio.h>
+#include<conio.h>
+#include<graphics.h>
+#include<math.h>
+#include<stdlib.h>
+#include<dos.h>
+void main()
+{
+	int x[100],y[100],nx[100],ny[100];
+	int i,j=0,k,frame=0,d=200;
+	int gd=DETECT,gm;
+
+
+	while(j!=80)
+    {
+	for (i=0;i<2;i++)
+	{       initgraph(&gd,&gm,"C://TURBOC3//BGI");
+				printf("this is frame %d",frame++);
+				
+				
+				//TOP LEFT FACE
+				circle(120,120,70);
+				setfillstyle(1,14);
+				floodfill(120,120,WHITE);
+				//DETAILS
+				setcolor(BLACK);
+				circle(90+8*i,85,10); //LEFT EYE
+				circle(150+8*i,85,10); //RIGHT EYE
+				arc(120,90,200-20*i,340+20*i,60);
+				circle(90+8*i,90,3); //LEFT EYE PUPIL
+				circle(150+8*i,90,3); //RIGHT EYE PUPIL
+				//FILLING EYE PUPIL
+				setfillstyle(1,0);
+				floodfill(90+8*i,90,BLACK);
+				floodfill(150+8*i,90,BLACK);
+				
+				
+				
+				//BOTTOM LEFT FACE
+				setcolor(WHITE);
+				circle(120,370,60);
+				setfillstyle(1,14);
+				floodfill(120,370,WHITE);
+				//head ring
+				ellipse(120,280+4*(i+1),0,360,70,15);
+				ellipse(120,277+4*(i+1),0,360,50,5);
+				setfillstyle(1,1);
+				floodfill(81,290,WHITE);
+				//DETAILS
+				setcolor(BLACK);
+				circle(90,340,10); //LEFT EYE
+				circle(150,340,10); //RIGHT EYE
+				arc(120,340,230,310,60);
+				circle(90,340,3); //LEFT EYE PUPIL
+				circle(150,340,3); //RIGHT EYE PUPIL
+				//FILLING EYE PUPIL
+				setfillstyle(1,0);
+				floodfill(90,340,BLACK);
+				floodfill(150,340,BLACK);
+				
+
+
+				//TOP RIGHT FACE
+				setcolor(WHITE);
+				circle(460,60,20);
+				setfillstyle(1,14);
+				floodfill(460,60,WHITE);
+				setcolor(BLACK);
+				circle(450,50,2);//left eye
+				circle(470,50,2);//right eye
+				setfillstyle(1,0);
+				floodfill(450,50,BLACK);
+				floodfill(470,50,BLACK);
+				arc(460,60,230,310,10);
+				setcolor(RED);
+				line(460,80,460,150);//body
+				if(i==0)
+				{
+					line(460,90,480,100);//right arm
+					line(480,100,490,130);
+					line(460,90,440,100);//left arm
+					line(440,100,430,130);
+				}
+				else
+				{
+					line(460,90,480,80);//right arm
+					line(480,80,430,55);
+					line(460,90,440,80);//left arm
+					line(440,80,370,55);
+				}
+				setcolor(BLUE);
+				line(460,150,445,200);//left leg
+				line(460,150,475,200);//right leg
+				setcolor(DARKGRAY);
+				line(445,200,420,200);//left shoe
+				line(475,200,500,200);//right shoe
+				
+				
+				
+
+
+				//BOTTOM RIGHT FACE
+				setcolor(WHITE);
+				circle(460,300,70);
+				setfillstyle(1,14);
+				floodfill(460,300,WHITE);
+				//DETAILS
+				setcolor(BLACK);
+				circle(430+8*i,265,10); //LEFT EYE
+				circle(490+8*i,265,10); //RIGHT EYE
+				//line(330,320,410,320); //SMILE
+				circle(430+8*i,270,3); //LEFT EYE PUPIL
+				circle(490+8*i,270,3); //RIGHT EYE PUPIL
+				//FILLING EYE PUPIL
+				setfillstyle(1,0);
+				floodfill(430+8*i,270,BLACK);
+				floodfill(490+8*i,270,BLACK);
+
+				delay(d);
+				cleardevice();
+	//		    closegraph();
+	}
+
+
+	for (i=0;i<2;i++)
+	{
+				initgraph(&gd,&gm,"C://TURBOC3//BGI");
+				printf("this is frame %d",frame++);
+
+				//TOP LEFT FACE
+				circle(120,120,70);
+				setfillstyle(1,14);
+				floodfill(120,120,WHITE);
+				//DETAILS
+				setcolor(BLACK);
+				circle(95-8*i,85,10); //LEFT EYE
+				circle(155-8*i,85,10);//RIGHT EYE
+				arc(120,90,200+20*i,340-20*i,60);
+				//line(80,140,160,140);//SMILE
+				circle(95-8*i,90,3);//LEFT EYE PUPIL
+				circle(155-8*i,90,3);//RIGHT EYE PUPIL
+				//FILLING EYE PUPIL
+				setfillstyle(1,0);
+				floodfill(95-8*i,90,BLACK);
+				floodfill(155-8*i,90,BLACK);
+
+				
+				
+				//BOTTOM lEFT FACE
+				setcolor(WHITE);
+				circle(120,370,60);
+				setfillstyle(1,14);
+				floodfill(120,370,WHITE);
+				//head ring
+				ellipse(120,288-4*(i+1),0,360,70,15);
+				ellipse(120,285-4*(i+1),0,360,50,5);
+				setfillstyle(1,1);
+				floodfill(81,290,WHITE);
+				//DETAILS
+				setcolor(BLACK);
+				circle(90,340,10); //LEFT EYE
+				circle(150,340,10); //RIGHT EYE
+				//arc(120,340,200+20*i,340-20*i,60);
+				//line(80,270,160,270);//SMILE
+				arc(120,340,230,310,60);
+				circle(90,340,3); //LEFT EYE PUPIL
+				circle(150,340,3); //RIGHT EYE PUPIL
+				//FILLING EYE PUPIL
+				setfillstyle(1,0);
+				floodfill(90,340,BLACK);
+				floodfill(150,340,BLACK);
+
+
+				//TOP RIGHT FACE
+				setcolor(WHITE);
+				circle(460,60,20);
+				setfillstyle(1,14);
+				floodfill(460,60,WHITE);
+				setcolor(BLACK);
+				circle(450,50,2);//left eye
+				circle(470,50,2);//right eye
+				setfillstyle(1,0);
+				floodfill(450,50,BLACK);
+				floodfill(470,50,BLACK);
+				arc(460,60,230,310,10);
+				setcolor(RED);
+				line(460,80,460,150);//body
+				if(i==0)
+				{
+					line(460,90,480,90);//right arm
+					line(480,90,460,80);
+					line(460,90,440,90);//left arm
+					line(440,90,400,80);
+				}
+				else
+				{
+					line(460,90,480,100);//right arm
+					line(480,100,490,130);
+					line(460,90,440,100);//left arm
+					line(440,100,430,130);
+				}
+				setcolor(BLUE);
+				line(460,150,445,200);//left leg
+				line(460,150,475,200);//right leg
+				setcolor(DARKGRAY);
+				line(445,200,420,200);//left shoe
+				line(475,200,500,200);//right shoe
+				
+
+
+				//BOTTOM RIGHT FACE
+				setcolor(WHITE);
+				circle(460,300,70);
+				setfillstyle(1,14);
+				floodfill(460,300,WHITE);
+				//DETAILS
+				setcolor(BLACK);
+				circle(430-8*i,265,10); //LEFT EYE
+				circle(490-8*i,265,10); //RIGHT EYE
+				arc(460,270,200+20*i,340-20*i,60);
+				//line(330,320,410,320); //SMILE
+				circle(430-8*i,270,3); //LEFT EYE PUPIL
+				circle(490-8*i,270,3); //RIGHT EYE PUPIL
+				//FILLING EYE PUPIL
+				setfillstyle(1,0);
+				floodfill(430-8*i,270,BLACK);
+				floodfill(490-8*i,270,BLACK);
+
+				delay(d);
+				cleardevice();
+	  //	       closegraph();
+	}
+
+		j++;
+		//for(i=0;i<4;i++)
+			//closegraph();
+	   }
+	getch();
+      //	closegraph();
+
+}
